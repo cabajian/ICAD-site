@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>How to Make An External LED Light Blink With Arduino</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <h1>How to Make An External LED Light Blink With Arduino</h1>
+      <h3>By Cornel Amariei</h3>
+    </header>
+    <article>
+      <div class="content">
+        <section>
+          <h4>Introduction</h4>
+          <p>It is easy to make the LED blink on an Arduino. We turn it on, wait, turn it off, wait again, and
+             then we repeat the cycle.</p>
+          <p>The Arduino boards come with an internal LED connected to pin 13. It is simple to
+             use and always there. But most times we want our own LEDs in different places of our system.
+             We might connect something on top of the Arduino board and can no longer see the internal
+             LED. Here, we will explore how to connect an external LED.</p>
+        </section>
+      </div>
+      <div class="content">
+        <section>
+          <h4>Getting Ready</h4>
+          <p>For this recipe, we need the following ingredients:</p>
+          <ul>
+            <li><p>An Arduino board connected to the computer via USB</p></li>
+            <li><p>A breadboard and jumper wires</p></li>
+            <li><p>A regular LED (the typical LED size is 3 mm)</p></li>
+            <li><p>A resistor between 220–1,000 ohm</p></li>
+          </ul>
+        </section>
+      </div>
+      <div class="content">
+        <section>
+          <h4>How To Do It</h4>
+          <p>Follow these steps to connect an external LED to an Arduino board:</p>
+          <ol>
+            <li><p>Mount the resistor on the breadboard. Connect one end of the resistor to a digital
+                   pin on the Arduino board using a jumper wire.</p></li>
+            <li><p>Mount the LED on the breadboard. Connect the anode (+) pin of the LED to the
+                   available pin on the resistor. We can determine the anode on the LED in two ways.
+                   Usually, the longer pin is the anode. Another way is to look for the flat edge on the
+                   outer casing of the LED. The pin next to the flat edge is the cathode (-).</p></li>
+            <li><p>Connect the LED cathode (-) to the Arduino GND using jumper wires.</p></li>
+          </ol>
+        </section>
+      </div>
+      <div class="content">
+        <section>
+          <h4>Schematic</h4>
+          <table>
+            <tr>
+              <td>
+                <figure id="fig-1">
+                  <a href="img/schematic.png"><img src="img/schematic.png" alt="schematic"></a>
+                  <div class="caption-border">
+                    <figcaption>One possible implementation on the second digital pin. Other digital pins can also be used.</figcaption>
+                  </div>
+                </figure>
+              </td>
+            <tr>
+              <td>
+                <figure id="fig-2">
+                  <a href="img/wiring.png"><img src="img/wiring.png" alt="wiring"></a>
+                  <div class="caption-border">
+                    <figcaption>A simple way of wiring the LED.</figcaption>
+                  </div>
+                </figure>
+              </td>
+            </tr>
+          </table>
+        </section>
+      </div>
+      <div class="content">
+        <section>
+          <h4>The Code</h4>
+         <p>The following code will make the external LED blink:</p>
+<pre class="code-block"><code>// Declare the LED pin
+int LED = 2;
+void setup() {
+// Declare the pin for the LED as Output
+  pinMode(LED, OUTPUT);
+}
+void loop(){
+// Here we will turn the LED ON and wait 200 milliseconds
+  digitalWrite(LED, HIGH);
+  delay(200);
+// Here we will turn the LED OFF and wait 200 milliseconds
+  digitalWrite(LED, LOW);
+  delay(200);
+}</code></pre>
+          <p><b>HELPFUL NOTE :</b> If the LED is connected to a different pin, simply change the LED value to
+           the value of the pin that has been used.</p>
+        </section>
+      </div>
+      <div class="content">
+        <section>
+          <h4>Code Breakdown</h4>
+          <p>The code simply turns the LED on, waits, and then turns it off again. Compared to the
+previous recipe, in this one we will use a blocking approach by using the <code>delay()</code> function.
+Here we declare the LED pin on digital pin 2:</p>
+          <code class="code-block" style="margin: auto; display: block;">int LED = 2;</code>
+          <p>In the <code>setup()</code> function we set the LED pin as an output:</p>
+<pre class="code-block"><code>void setup() {
+  pinMode(LED, OUTPUT);
+}</code></pre>
+          <p>In the <code>loop()</code> function, we continuously turn the LED on, wait 200 milliseconds, and then
+             we turn it off. After turning it off we need to wait another 200 milliseconds, otherwise it will
+             instantaneously turn on again and we will only see a permanently on LED.</p>
+<pre class="code-block"><code>void loop(){
+  // Here we will turn the LED ON and wait 200 miliseconds
+  digitalWrite(LED, HIGH);
+  delay(200);
+  // Here we will turn the LED OFF and wait 200 miliseconds
+  digitalWrite(LED, LOW);
+  delay(200);
+}</code></pre>
+          <br>
+        </section>
+      </div>
+      <div class="content">
+        <section id="conclude">
+          <h4>How It Works</h4>
+          <p>This is all semiconductor magic. When the second digital pin is set to HIGH , the Arduino
+             provides 5 V of electricity, which travels through the resistor to the LED and GND. When
+             enough voltage and current is present, the LED will light up. The resistor limits the amount
+             of current passing through the LED. Without it, it is possible that the LED (or worse, the
+             Arduino pin) will burn. Try to avoid using LEDs without resistors; this can easily destroy the
+             LED or even your Arduino.</p>
+        </section>
+      </div>
+    </article>
+  </body>
+</html>

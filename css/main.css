@@ -1,0 +1,126 @@
+/***********/
+/* GENERAL */
+/***********/
+body {
+  background-image: url("../img/background.png");
+  font-family: 'Roboto', sans-serif;
+}
+
+/***********/
+/* HEADING */
+/***********/
+header {
+  display: block;
+  margin: 0 calc(25% - 100px) 15px;
+  padding: 5px 10px;
+  background-color: teal;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+h1 {
+  font-family: 'Acme', sans-serif;
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1em;
+  text-shadow: 2px 2px 5px black;
+  color: #fff;
+}
+
+h3 {
+  font-family: 'Acme', sans-serif;
+  font-size: 1.75em;
+  margin: 10px;
+  font-weight: normal;
+  line-height: 1em;
+  text-shadow: 2px 2px 3px black;
+  color: #fff;
+}
+
+/***********/
+/* CONTENT */
+/***********/
+.content {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  width: calc(50% + 100px);
+  background-color: #d5ecf2;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.18),
+              0 2px 2px rgba(0,0,0,0.3);
+  border-radius: 3px;
+  border-left: 3px solid teal;
+  border-right: 3px solid teal;
+}
+
+section {
+  padding: 1px 15px;
+}
+
+#conclude {
+  margin-bottom: 10%;
+}
+
+h4 {
+  font-family: 'Acme', sans-serif;
+  font-size: 1.75em;
+  font-weight: 300;
+  margin: 5px 0 5px;
+  color: teal;
+  text-shadow: 1px 1px 1px #BFDBDB;
+  letter-spacing: .1em;
+}
+
+/***********/
+/* SCHEMATIC/
+/***********/
+table {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#fig-1 {
+  margin: 2.5% 25%;
+}
+
+#fig-2 {
+  margin: 2.5% 10%;
+}
+
+.caption-border {
+  border-left: 2px solid #BFDBDB;
+  border-right: 2px solid #BFDBDB;
+}
+
+figcaption {
+  padding: 5px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.24);
+  border-radius: 3px;
+}
+
+/***********/
+/* CODE    */
+/***********/
+.code-block {
+  width: 60%;
+  margin: auto;
+  padding: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.24);
+  border-left: 2px solid teal;
+}
+
+code {
+  background-color: #fff;
+}
