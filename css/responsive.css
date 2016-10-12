@@ -35,7 +35,12 @@
   }
   
   #fig-1 {
-    margin: 0;
+    margin: 2.5%;
+  }
+  
+  #fig-2 {
+    margin: 2.5%;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 700px) {
