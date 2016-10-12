@@ -46,4 +46,8 @@
   .content {
     width: calc(90% - 80px);
   }
+  
+  h4 {
+    margin: 5px 0 0;
+  }
 }
