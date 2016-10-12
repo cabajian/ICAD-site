@@ -36,7 +36,7 @@
   
   #fig-1 {
     margin: 5%;
-    height: 75%;
+    max-height: 75%;
   }
   
   #fig-2 {
