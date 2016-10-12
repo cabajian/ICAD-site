@@ -55,4 +55,12 @@
   .content {
     width: calc(90% - 80px);
   }
+  
+  #fig-1 {
+    margin: 2.5% 20%;
+  }
+  
+  #fig-2 {
+    margin: 2.5% 20%;
+  }
 }
